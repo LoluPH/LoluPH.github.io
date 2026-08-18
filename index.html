@@ -5,12 +5,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Analytics Portfolio</title>
+    <title>Peace Isaac — Data & Analytics Leader</title>
+    <meta
+      name="description"
+      content="15+ years in data and technology across energy, financial services, and government. Completing McGill's Master of Management Analytics, Class of 2027."
+    />
 
     <style>
       /* ============================================================
-       BASIC STYLES — students can tweak colors/fonts here
+       DESIGN TOKENS
        ============================================================ */
+      :root {
+        --color-bg: #f6f5f2;
+        --color-surface: #ffffff;
+        --color-border: #e2ded6;
+        --color-primary: #16283d; /* deep slate/navy */
+        --color-text: #1f2933;
+        --color-muted: #556370;
+        --color-accent: #9a4a12; /* warm accent — links & active states only */
+        --color-accent-contrast: #ffffff;
+        --radius: 6px;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -18,47 +34,73 @@
       }
 
       body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #222;
-        background: #f7f7f7;
-        line-height: 1.5;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        color: var(--color-text);
+        background: var(--color-bg);
+        line-height: 1.6;
       }
 
       .container {
-        max-width: 900px;
+        max-width: 720px;
         margin: 0 auto;
         padding: 40px 20px;
       }
 
-      /* ---------- HEADER (photo + name + subheading) ---------- */
+      a {
+        color: var(--color-accent);
+      }
+      a:hover,
+      a:focus-visible {
+        text-decoration: none;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: var(--color-primary);
+        line-height: 1.3;
+      }
+
+      /* ---------- HEADER (name + tagline + location + links) ---------- */
       header {
         text-align: center;
         margin-bottom: 30px;
       }
 
-      /* Empty space for photo — replace with your own <img> if you like */
-      .photo {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        background: #ddd;
-        border: 2px dashed #aaa;
-        margin: 0 auto 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 13px;
-      }
-
       header h1 {
         font-size: 28px;
         margin-bottom: 6px;
-      } /* NAME */
-      header p {
+      }
+
+      header .tagline {
         font-size: 16px;
-        color: #555;
-      } /* EXPERIENCES */
+        color: var(--color-muted);
+        margin-bottom: 4px;
+      }
+
+      header .location {
+        font-size: 14px;
+        color: var(--color-muted);
+        margin-bottom: 18px;
+      }
+
+      .profile-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+      }
+
+      .profile-links a {
+        font-size: 15px;
+        font-weight: 600;
+        padding: 6px 4px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
 
       /* ---------- TABS ---------- */
       .tabs {
@@ -66,21 +108,24 @@
         justify-content: center;
         gap: 10px;
         margin-bottom: 24px;
+        flex-wrap: wrap;
       }
 
       .tab-button {
         padding: 10px 22px;
-        border: 1px solid #ccc;
-        background: #fff;
+        min-height: 44px;
+        border: 1px solid var(--color-border);
+        background: var(--color-surface);
+        color: var(--color-text);
         cursor: pointer;
         font-size: 15px;
-        border-radius: 4px;
+        border-radius: var(--radius);
       }
 
       .tab-button.active {
-        background: #2c3e50;
-        color: #fff;
-        border-color: #2c3e50;
+        background: var(--color-accent);
+        color: var(--color-accent-contrast);
+        border-color: var(--color-accent);
       }
 
       /* ---------- TAB CONTENT ---------- */
@@ -92,10 +137,87 @@
       }
 
       .panel {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 6px;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
         padding: 24px;
+      }
+
+      .panel section + section {
+        margin-top: 32px;
+      }
+
+      .panel h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .panel p {
+        margin-bottom: 12px;
+      }
+      .panel p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ---------- EXPERIENCE ---------- */
+      .experience-entry + .experience-entry {
+        margin-top: 24px;
+      }
+
+      .experience-entry h3 {
+        font-size: 17px;
+      }
+
+      .entry-meta {
+        font-size: 14px;
+        color: var(--color-muted);
+        margin-bottom: 12px;
+      }
+
+      .role + .role {
+        margin-top: 16px;
+      }
+
+      .role h4 {
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+
+      .role-dates {
+        color: var(--color-muted);
+        font-weight: normal;
+        font-size: 14px;
+      }
+
+      .role ul {
+        padding-left: 20px;
+      }
+
+      .role li + li {
+        margin-top: 6px;
+      }
+
+      .earlier-career {
+        margin-top: 20px;
+        font-size: 14px;
+        color: var(--color-muted);
+      }
+
+      .skills-list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .skills-list li {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: 6px 12px;
+        font-size: 14px;
       }
 
       /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
@@ -106,10 +228,10 @@
       }
 
       .card {
-        border: 1px solid #eee;
-        border-radius: 6px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
         overflow: hidden;
-        background: #fff;
+        background: var(--color-surface);
       }
 
       /* Empty space for project photo */
@@ -133,13 +255,25 @@
       }
       .card-text p {
         font-size: 14px;
-        color: #555;
+        color: var(--color-muted);
       }
 
-      /* ---------- MOBILE: stack cards vertically ---------- */
+      /* ---------- MOBILE ---------- */
       @media (max-width: 640px) {
         .cards {
           grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .container {
+          padding: 28px 16px;
+        }
+        .tabs {
+          gap: 8px;
+        }
+        .tab-button {
+          padding: 10px 16px;
         }
       }
     </style>
@@ -148,14 +282,27 @@
   <body>
     <div class="container">
       <!-- ============================================================
-         HEADER: photo, name, experiences
+         HEADER: name, tagline, location, profile links
          ============================================================ -->
       <header>
-        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> -->
-        <div class="photo">Photo</div>
-
         <h1>Peace Isaac</h1>
-        <p>Data & Analytics . Python . SQL . AI Governance</p>
+        <p class="tagline">
+          Data & Analytics Leader · AI Adoption · AI Governance · Python · SQL
+        </p>
+        <p class="location">Montreal, QC</p>
+
+        <nav class="profile-links" aria-label="Profile links">
+          <a
+            href="https://www.linkedin.com/in/peace-isaac/"
+            aria-label="Peace Isaac's LinkedIn profile"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/LoluPH"
+            aria-label="Peace Isaac's GitHub profile"
+            >GitHub</a
+          >
+        </nav>
       </header>
 
       <!-- ============================================================
@@ -173,42 +320,192 @@
       <!-- ---------- TAB 1: ABOUT ME ---------- -->
       <div id="about" class="tab-content active">
         <div class="panel">
-          <p>
-            Write a short introduction about yourself here — your background,
-            skills, and what kind of business analytics role you're looking for.
-          </p>
+          <section>
+            <h2>About Me</h2>
+            <p>
+              15+ years in data and technology, including five in Canada
+              across the energy sector and the federal public service. I'm
+              now completing McGill's Master of Management Analytics (Class
+              of 2027), adding technical depth to business judgment built in
+              the field. What I care about is making AI work inside real
+              organizations: not pilots that impress, but systems that
+              scale, that people trust, and that hold up under scrutiny.
+            </p>
+          </section>
+
+          <section>
+            <h2>Career Goals</h2>
+            <p>
+              I work at the intersection of building AI and governing it —
+              architecting and scaling AI solutions, driving adoption across
+              organizations, and translating messy business workflows into
+              requirements engineering teams can actually deliver against.
+              Longer term, I'm working toward a Chief Data or Chief AI
+              Officer role.
+            </p>
+          </section>
+
+          <section>
+            <h2>Experience</h2>
+
+            <article class="experience-entry">
+              <h3>Brookfield Renewable</h3>
+              <p class="entry-meta">Gatineau, QC · Oct 2022 – Jan 2026</p>
+
+              <div class="role">
+                <h4>
+                  Coordinator, Technology Services
+                  <span class="role-dates">(Mar 2024 – Jan 2026)</span>
+                </h4>
+                <ul>
+                  <li>
+                    Led the migration of terabyte-scale historical energy
+                    data from legacy Oracle systems to a modern data
+                    platform, transitioning 50+ power users across trading
+                    departments with zero downtime during critical trading
+                    hours.
+                  </li>
+                  <li>
+                    Restructured executive stakeholder engagement by
+                    establishing three functional alignment groups,
+                    streamlining the requirements process behind real-time
+                    supervisory reporting.
+                  </li>
+                  <li>
+                    Delivered the 2025 CAPEX roadmap, including a database
+                    vendor transition and root-cause resolution of
+                    hardware-level infrastructure failures.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="role">
+                <h4>
+                  Coordinator, Data Analytics & Integration
+                  <span class="role-dates">(Oct 2022 – Mar 2024)</span>
+                </h4>
+                <ul>
+                  <li>
+                    Led IT workstreams for the multi-year IESO Market Renewal
+                    Program, preparing systems for an enterprise-wide energy
+                    market transition.
+                  </li>
+                  <li>
+                    Cut a legacy support backlog by 55% and halved response
+                    times within 90 days.
+                  </li>
+                  <li>
+                    Built a cross-functional alignment framework adopted as a
+                    departmental standard.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="experience-entry">
+              <h3>Employment and Social Development Canada (ESDC)</h3>
+              <p class="entry-meta">Gatineau, QC · Oct 2021 – Oct 2022</p>
+
+              <div class="role">
+                <h4>Program Consultant, Digital Workplace Taskforce</h4>
+                <ul>
+                  <li>
+                    Engineered a validated data-entry system for security
+                    clearance applications, removing 30+ days from each
+                    processing cycle.
+                  </li>
+                  <li>
+                    Automated status notifications, cutting internal delays
+                    and giving applicants real-time visibility into their
+                    applications.
+                  </li>
+                  <li>
+                    Translated business needs into technical requirements
+                    for five priority digitization projects in an Agile
+                    delivery model.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="experience-entry">
+              <h3>EDMS | Dentallytics</h3>
+              <p class="entry-meta">Ottawa, ON · Jan 2021 – Oct 2021</p>
+
+              <div class="role">
+                <h4>Technical Business Analyst</h4>
+                <ul>
+                  <li>
+                    Automated high-volume data extraction using C# and
+                    regular expressions, reducing processing time from one
+                    week to under 20 seconds.
+                  </li>
+                  <li>
+                    Built SQL Server transformation pipelines to harmonize
+                    third-party datasets into the enterprise data warehouse.
+                  </li>
+                  <li>
+                    Translated dental service organization requirements into
+                    specifications for clinic-level financial analytics
+                    tools.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <p class="earlier-career">
+              Earlier career: 10+ years in data and technology roles across
+              financial services and the public sector.
+            </p>
+          </section>
+
+          <section>
+            <h2>Skills</h2>
+            <ul class="skills-list">
+              <li>Python</li>
+              <li>SQL</li>
+              <li>Cloud AI Platforms (Microsoft Azure, AWS)</li>
+              <li>Data Governance</li>
+              <li>Stakeholder Translation</li>
+            </ul>
+          </section>
         </div>
       </div>
 
       <!-- ---------- TAB 2: PROJECTS ---------- -->
       <div id="projects" class="tab-content">
-        <div class="cards">
-          <!-- CARD 1 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
+        <div class="panel">
+          <section>
+            <h2>Projects</h2>
+            <div class="cards">
+              <!-- CARD 1 -->
+              <div class="card">
+                <div class="card-photo">Project Image</div>
+                <div class="card-text">
+                  <h3>Coming soon — MMA capstone</h3>
+                  <p>Details to follow as coursework produces them.</p>
+                </div>
+              </div>
 
-          <!-- CARD 2 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
+              <!-- CARD 2 -->
+              <div class="card">
+                <div class="card-photo">Project Image</div>
+                <div class="card-text">
+                  <h3>Coming soon</h3>
+                  <p>Details to follow as coursework produces them.</p>
+                </div>
+              </div>
 
-          <!-- CARD 3 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+              <!-- CARD 3 -->
+              <div class="card">
+                <div class="card-photo">Project Image</div>
+                <div class="card-text">
+                  <h3>Coming soon</h3>
+                  <p>Details to follow as coursework produces them.</p>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </div>
